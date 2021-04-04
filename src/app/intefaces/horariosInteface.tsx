@@ -2,10 +2,11 @@ import { city } from './studentInterface';
 
 export interface i_h_state {
     horarios?: Array<i_horarios>
+    
 }
 
 export interface i_horarios {
-  /*   id_horario          : number, */
+    id_horario          : number, 
     cedula_estudiante   : string,
     nombredia           : string,
     horaentrata         : string,

@@ -1,6 +1,6 @@
 export interface i_student_state {
     students?: Array<i_student>;
-    active?:i_student;
+    active?: i_student;
 }
 
 export interface i_student_action {
@@ -8,7 +8,7 @@ export interface i_student_action {
     payload: i_student_state;
 }
 
-export interface i_student{
+export interface i_student {
     cedula_estudiante: string,
     apellido_estudiante: string,
     nombre_estudiante: string,
@@ -18,12 +18,12 @@ export interface i_student{
     facultade: faculty,
     modalidad: modality,
     semestre: semester,
-    horarios: Array<schedule>, 
+    horarios: Array<schedule>,
     comentarios?: Array<commentary>
 }
 
 export interface city {
-     id_ciudad: number; 
+    id_ciudad: number;
     nombre: string;
 }
 
@@ -43,7 +43,7 @@ interface semester {
     nombre: string;
 }
 
-interface schedule {
+export interface schedule {
     id_horario: number;
     cedula_estudiante: string;
     nombredia: string;
@@ -51,7 +51,7 @@ interface schedule {
     horasalida: string;
 }
 
-interface commentary {
+export interface commentary {
     id_comentario: Number;
     cedula_conductor: String,
     cedula_estudiante: String,

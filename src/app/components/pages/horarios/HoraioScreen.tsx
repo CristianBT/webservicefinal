@@ -17,6 +17,8 @@ const Afluencia = () => {
     const dispatch = useDispatch();
     const { horarios: { horarios }, ui: { loading } } = useSelector((info: i_redux) => info);
 
+    console.log(horarios)
+
     const init: i_h_consulta = {
         nombredia: 'Lunes',
         horaentrada: date.format('H:mm'),
