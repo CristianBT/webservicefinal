@@ -20,7 +20,7 @@ const ListDrivers = () => {
     
     const handleDeleteDriver = (driver:i_driver) => dispatch( startDeleteDriver(driver) );
     return <>
-        <button type="button" onClick={ handleAdd }> Agregar </button>
+     {/*    <button type="button" onClick={ handleAdd }> Agregar </button> */}
         <table className='table table-striped table-hover'>
             <thead>
                 <tr>
@@ -46,7 +46,7 @@ const ListDrivers = () => {
                         <td>{driver.numerorecorridomaximo}</td>
                         <td>
                             <i style={{ cursor: 'pointer', margin: '0 6px '}} onClick={ () => handleEditDriver(driver) } className='fa fa-edit'></i>
-                            <i style={{ cursor: 'pointer', margin: '0 6px '}} onClick={ () => handleDeleteDriver(driver) } className='fa fa-trash'></i>
+                          {/*   <i style={{ cursor: 'pointer', margin: '0 6px '}} onClick={ () => handleDeleteDriver(driver) } className='fa fa-trash'></i> */}
                         </td>
                     </tr>)
                 }

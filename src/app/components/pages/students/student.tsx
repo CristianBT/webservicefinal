@@ -10,7 +10,7 @@ const Student = () => {
     const { horarios } = active as i_student;
 
 
-    console.log(active)
+    console.log(horarios)
 
     return <>
         <h3 className="text-center">Datos Completos del Estudiante</h3>
@@ -86,9 +86,9 @@ const Student = () => {
                         (comentarios && comentarios.length > 1)
                             ? comentarios.map((comentario: commentary, key: number) =>
                                 <pre key={key}>{JSON.stringify(comentario.gradosatisfacion, null, 4)}</pre>)
-                            : <div>no existe datos </div>
+                            : <div>No Existe Datos </div>
                     }
-
+                  <hr className="my-1" />
                 </div>
                 <div className="col-2"><strong>Horario</strong> </div>
                 <table className="table table-bordered ">
@@ -113,9 +113,10 @@ const Student = () => {
                                 {
                                     (horarios && horarios.length > 1)
                                         ? horarios.map((hora: schedule, key: number) =>
-                                            <pre key={key}>{JSON.stringify(hora.horaentrada, null, 4)}</pre>)
+                                            <pre key={key}>{JSON.stringify(hora.horaentrata, null, 4)}</pre>)
                                         : <div>no existe datos </div>
                                 }
+                              
                             </td>
                             <td>
                                 {

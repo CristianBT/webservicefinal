@@ -3,6 +3,7 @@ export interface i_student_state {
     active?: i_student;
 }
 
+
 export interface i_student_action {
     type: string;
     payload: i_student_state;
@@ -47,7 +48,7 @@ export interface schedule {
     id_horario: number;
     cedula_estudiante: string;
     nombredia: string;
-    horaentrada: string;
+    horaentrata: string;
     horasalida: string;
 }
 

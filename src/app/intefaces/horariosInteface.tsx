@@ -2,6 +2,7 @@ import { city } from './studentInterface';
 
 export interface i_h_state {
     horarios?: Array<i_horarios>
+  
     
 }
 
@@ -22,6 +23,7 @@ export interface i_h_student {
     ciudad              : city;
 }
 
+
 export interface i_h_action {
     type: string;
     payload?: i_h_state;
@@ -33,4 +35,4 @@ export interface i_h_consulta {
     horadalida  : string;
 }
 
-type typeDia = 'Lunes' | 'Martes' | 'Miercoles' | 'Jueves' | 'Viernes' | 'Sabado' | 'Domingo'
+type typeDia =  'Lunes' | 'Martes' | 'Miercoles' | 'Jueves' | 'Viernes' | 'Sabado' | 'Domingo'
