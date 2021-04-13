@@ -3877,10 +3877,10 @@
     "browserslist" "^4.16.3"
     "semver" "7.0.0"
 
-"core-js-pure@^3.0.0":
-  "integrity" "sha512-3pEcmMZC9Cq0D4ZBh3pe2HLtqxpGNJBLXF/kZ2YzK17RbKp94w0HFbdbSx8H8kAlZG5k76hvLrkPm57Uyef+kg=="
-  "resolved" "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.9.0.tgz"
-  "version" "3.9.0"
+"core-js-pure@^3.0.0", "core-js-pure@^3.10.0":
+  "integrity" "sha512-CC582enhrFZStO4F8lGI7QL3SYx7/AIRc+IdSi3btrQGrVsTawo5K/crmKbRrQ+MOMhNX4v+PATn0k2NN6wI7A=="
+  "resolved" "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.10.0.tgz"
+  "version" "3.10.0"
 
 "core-js@^2.4.0":
   "integrity" "sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ=="

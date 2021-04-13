@@ -9,7 +9,6 @@ import i_redux from '../../../intefaces/reduxInterface';
 import Loading from '../../ui/loading';
 import { startLoading } from '../../../actions/ui';
 
-
 const Afluencia = () => {
 
     const date = moment().hour(0).minute(0).second(0);
@@ -18,18 +17,17 @@ const Afluencia = () => {
     const { horarios: { horarios }, ui: { loading } } = useSelector((info: i_redux) => info);
     console.log(horarios)
 
-
     const init: i_h_consulta = {
         nombredia: 'Lunes',
-        horaentrada: date.format('H:mm'),
-        horadalida: date.hour(5).format('H:mm'),
+        horaentrata: date.hour(5).format('H:mm'),
+        horasalida: date.hour(5).format('H:mm'),
     }
 
     const [showTimeStart, setShowTimeStart] = useState(false);
     const [showTimeEnd, setShowTimeEnd] = useState(false);
 
-    const [horaentrada, setHoraEntrada] = useState(init.horaentrada);
-    const [horadalida, setHoraSalida] = useState(init.horadalida);
+    const [horaentrata, setHoraEntrada] = useState(init.horaentrata);
+    const [horasalida, setHoraSalida] = useState(init.horasalida);
 
     const [values, handleInputChange] = useForm(init);
     const { nombredia } = values;
@@ -39,8 +37,8 @@ const Afluencia = () => {
     const handleSubmit = (e: Event) => {
         e.preventDefault();
 
-        values.horaentrada = horaentrada;
-        values.horadalida = horadalida;
+        values.horaentrata = horaentrata;
+        values.horasalida = horasalida;
         dispatch(startingGetHorarios(values));
         dispatch(startLoading());
     }
@@ -64,7 +62,7 @@ const Afluencia = () => {
                 <button type='button' className="btn btn-outline-secondary btn-lg" onClick={() => setShowTimeStart(!showTimeStart)}>Hora Entrada</button>
                 {
                     showTimeStart && <TimeKeeper
-                        time={horaentrada}
+                        time={horaentrata}
                         onChange={(newTime) => setHoraEntrada(newTime.formatted24)}
                         hour24Mode={true}
                     />
@@ -74,7 +72,7 @@ const Afluencia = () => {
                 <button type='button' className="btn btn-outline-secondary btn-lg" onClick={() => setShowTimeEnd(!showTimeEnd)}>Hora Salida</button>
                 {
                     showTimeEnd && <TimeKeeper
-                        time={horadalida}
+                        time={horasalida}
                         onChange={(newTime) => setHoraSalida(newTime.formatted24)}
                         hour24Mode={true}
                     />
@@ -85,7 +83,7 @@ const Afluencia = () => {
         <br /><br />
 
 
-
+        {/* 
         <div className="col-2"><strong>Listado</strong> </div>
         <table className="table table-bordered ">
             <thead>
@@ -136,14 +134,69 @@ const Afluencia = () => {
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table> */}
 
-        {/*         {
+        {
             loading
                 ? <Loading type='spin' color='#48f542' />
-                : <pre>{JSON.stringify(horarios, null, 4)}</pre>
+                : <pre>{ JSON.stringify(horarios, null, 4) }
 
-        } */}
+
+                    <div className="col-2"><strong>Listado</strong> </div>
+                    <table className="table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Cedula Estudiante</th>
+                                <th scope="col">Dia de la Semana</th>
+                                <th scope="col">Hora de Entrada</th>
+                                <th scope="col">Hora de Salida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td >
+                                    {
+                                        (horarios && horarios.length >= 1)
+                                            ? horarios.map((hora: i_horarios, key: number) =>
+                                                <pre key={key}>{JSON.stringify(hora.cedula_estudiante, null, 4)}</pre>)
+                                            : <div>No Existe Datos </div>
+                                    }
+
+                                </td>
+                                <td>
+                                    {
+                                        (horarios && horarios.length >= 1)
+                                            ? horarios.map((hora: i_horarios, key: number) =>
+                                                <pre key={key}>{JSON.stringify(hora.nombredia, null, 4)}</pre>)
+                                            : <div>No Existe Datos </div>
+                                    }
+
+                                </td>
+                                <td>
+                                    {
+                                        (horarios && horarios.length >= 1)
+                                            ? horarios.map((hora: i_horarios, key: number) =>
+                                                <pre key={key}>{JSON.stringify(hora.horaentrata, null, 4)}</pre>)
+                                            : <div>No Existe Datos </div>
+                                    }
+
+                                </td>
+                                <td>
+                                    {
+                                        (horarios && horarios.length >= 1)
+                                            ? horarios.map((hora: i_horarios, key: number) =>
+                                                <pre key={key}>{JSON.stringify(hora.horasalida, null, 4)}</pre>)
+                                            : <div>No Existe Datos </div>
+                                    }
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </pre>
+
+        }
 
 
 

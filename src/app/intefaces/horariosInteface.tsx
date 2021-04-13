@@ -31,8 +31,8 @@ export interface i_h_action {
 
 export interface i_h_consulta {
     nombredia   : typeDia;
-    horaentrada : string;
-    horadalida  : string;
+    horaentrata : string;
+    horasalida  : string;
 }
 
 type typeDia =  'Lunes' | 'Martes' | 'Miercoles' | 'Jueves' | 'Viernes' | 'Sabado' | 'Domingo'
